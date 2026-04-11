@@ -1,0 +1,7 @@
+{
+  "name": "motocompanion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
