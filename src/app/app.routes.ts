@@ -9,21 +9,10 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },  {
+  },
+  {
     path: 'weather',
     loadComponent: () => import('./weather/weather.page').then( m => m.WeatherPage)
-  },
-  {
-    path: 'page',
-    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
-  },
-  {
-    path: 'page',
-    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
-  },
-  {
-    path: 'page',
-    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
   },
   {
     path: 'news',
@@ -36,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'trips',
     loadComponent: () => import('./trips/trips.page').then( m => m.TripsPage)
+  },
+  {
+    path: 'garage',
+    loadComponent: () => import('./garage/garage.page').then( m => m.GaragePage)
   },
 
 ];
