@@ -9,5 +9,33 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },  {
+    path: 'weather',
+    loadComponent: () => import('./weather/weather.page').then( m => m.WeatherPage)
   },
+  {
+    path: 'page',
+    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
+  },
+  {
+    path: 'page',
+    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
+  },
+  {
+    path: 'page',
+    loadComponent: () => import('./page/page.page').then( m => m.PagePage)
+  },
+  {
+    path: 'news',
+    loadComponent: () => import('./news/news.page').then( m => m.NewsPage)
+  },
+  {
+    path: 'maintenance',
+    loadComponent: () => import('./maintenance/maintenance.page').then( m => m.MaintenancePage)
+  },
+  {
+    path: 'trips',
+    loadComponent: () => import('./trips/trips.page').then( m => m.TripsPage)
+  },
+
 ];
