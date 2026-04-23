@@ -9,9 +9,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">news</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1 class="news-title" align="center">Latest Motorcycle News</h1>
+
+
+   @for(newsItem of news;track newsItem){
+    <a [href]="newsItem.url" target="_blank">
+  <ion-card>
+    <img alt="News Poster" src={{newsItem.image}} />
+    <ion-card-header>
+      <ion-card-subtitle>{{newsItem.description}}</ion-card-subtitle>
+      <ion-card-title>{{newsItem.title}}</ion-card-title>
+      
+    </ion-card-header>
+
+
+  </ion-card>
+  </a>
+  }
 </ion-content>
