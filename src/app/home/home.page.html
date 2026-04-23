@@ -14,15 +14,24 @@
   </ion-header>
 
   <div id="container">
-    <strong>Welcome to the MotoCompanion!</strong>
+    @if(username){
+    <h1 align="center">Hi {{ username }}!</h1>
+    <strong>Welcome back to the MotoCompanion!</strong>
+    } @else {
+    <p>Welcome to MotoCompanion!
+      <br>
+      Please set your username in the settings to personalize your experience.
+    </p>
+    }
+
     
-      <ion-button routerLink="/weather" >Weather</ion-button>
-      <ion-button routerLink="/news">Moto News</ion-button>
-      <ion-button routerLink="/maintenance">Maintenance</ion-button>
-      <ion-button routerLink="/trips">Trips</ion-button>
-      <ion-button routerLink="/garage">Garage</ion-button>
-    
+
+    <ion-button routerLink="/weather">Weather</ion-button>
+    <ion-button routerLink="/garage">Garage</ion-button>
+    <ion-button routerLink="/news">Moto News</ion-button>
+    <ion-button routerLink="/settings">Settings</ion-button>
+
+
 
   </div>
 </ion-content>
-  

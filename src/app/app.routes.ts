@@ -19,16 +19,12 @@ export const routes: Routes = [
     loadComponent: () => import('./news/news.page').then( m => m.NewsPage)
   },
   {
-    path: 'maintenance',
-    loadComponent: () => import('./maintenance/maintenance.page').then( m => m.MaintenancePage)
-  },
-  {
-    path: 'trips',
-    loadComponent: () => import('./trips/trips.page').then( m => m.TripsPage)
-  },
-  {
     path: 'garage',
     loadComponent: () => import('./garage/garage.page').then( m => m.GaragePage)
+  },
+  {
+    path: 'settings',
+    loadComponent: () => import('./settings/settings.page').then( m => m.SettingsPage)
   },
 
 ];

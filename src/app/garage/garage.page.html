@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title align="center">Welcome to your garage!</ion-title>
-     <ion-buttons slot="start">
+    <ion-title align="center">Garage</ion-title>
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -10,7 +10,31 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large" >Welcome to your garage!</ion-title>
+      <ion-title size="large">Garage</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h2 align="center">My Bikes:</h2>
+
+  @if(bikes.length === 0){
+  <p align="center">Your garage is empty!</p>
+  }
+
+  @for(bike of bikes;track bike){
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>{{bike.make}} {{bike.model}}</ion-card-title>
+      <ion-card-subtitle>Year: {{bike.year}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button color="danger" (click)="deleteBike(bikes.indexOf(bike))">Delete</ion-button>
+  </ion-card>
+  }
+
+  <ion-button (click)="presentAddBikeAlert()">Add Bike</ion-button>
+
+
+
+
+
 </ion-content>
