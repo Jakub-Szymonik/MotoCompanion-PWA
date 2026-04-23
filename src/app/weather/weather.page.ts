@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/angular/standalone';
 import { RouterLink } from "@angular/router";
 import { IonBackButton, IonButtons } from '@ionic/angular/standalone';
 import { Geolocation } from '@capacitor/geolocation';
@@ -25,7 +25,7 @@ export class WeatherPage implements OnInit {
   cityName: string = '';
   temperature: number = 0;
   precipitation: number = 0;
-  
+
 
   constructor(private weatherService: WeatherService) { }
 
@@ -42,7 +42,15 @@ export class WeatherPage implements OnInit {
 
       .subscribe(results => {
         this.temperature = results.weather.current.temperature_2m;
-        this.cityName = results.city.address.town || results.city.address.city || results.city.address.county;
+        this.cityName =
+          results.city.address.city ||
+          results.city.address.town ||
+          results.city.address.village ||
+          results.city.address.hamlet ||
+          results.city.address.suburb ||
+          results.city.address.county ||
+          'Unknown location';
+
         this.precipitation = results.weather.current.precipitation_probability;
       });
 
